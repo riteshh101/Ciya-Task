@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Home</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" >
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 col-md-6 col-lg-6" style="border-left :10px solid #eef3fa; border-bottom :10px solid #eef3fa; border-right : 20px solid #eef3fa; ">
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="">General</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="">Attachment</a>
+    </li>
+  </ul>
+</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 mt-1"  style="background-color:#7380c4; height:30px;">
+            {% for message in messages %}
+              <span style="color:orange; text-align:center;">{{message}}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <span style="color:#ffa31a;">Vehicle Detail</span><hr  style="height:2px; color:#7380c4;">
+          </div>
+          <div class="row">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">SAP Code</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" required name="sap">
+    </div>
+  </div>
+              <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Ledger Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control form-group" required name="ledger">
+    </div>
+
+  </div>
+              <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Manufacturer</label>
+    <div class="col-sm-8">
+     <div class="input-group mb-3">
+
+  <select class="form-select" name="manufacture" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+<!--         <span class="input-group-text" id="basic-addon1"><i class="fa fa-caret-down"></i></span>-->
+         <span class="input-group-text" id="basic-addon1">  <a href="">      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-pencil" viewBox="0 0 16 16">
+  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+</svg></a></span>
+</div>
+
+                        </div>
+
+                </div>
+  </div>
+              <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Model</label>
+    <div class="col-sm-8">
+     <div class="input-group mb-3">
+
+  <select class="form-select" name="model" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+<!--         <span class="input-group-text" id="basic-addon1"><i class="fa fa-caret-down"></i></span>-->
+         <span class="input-group-text" id="basic-addon1">  <a href="">      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-pencil" viewBox="0 0 16 16">
+  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+</svg></a></span>
+</div>
+
+                        </div>
+
+                </div>
+
+              <div class="row mb-3">
+    <label class="col-sm-4 col-form-label"><span style="color:red;">*</span>Vehicle Type</label>
+    <div class="col-sm-8">
+      <select class="form-select" name="vehicletype" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+    </div>
+  </div>
+
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label"><span style="color:red;">*</span>Base KM</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" required name="basekm" >
+    </div>
+  </div>
+
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">RTO</label>
+    <div class="col-sm-8">
+       <div class="input-group mb-3">
+
+  <select class="form-select" name="rto" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+<!--         <span class="input-group-text" id="basic-addon1"><i class="fa fa-caret-down"></i></span>-->
+         <span class="input-group-text">  <a href="">      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-pencil" viewBox="0 0 16 16">
+  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+</svg></a></span>
+</div>
+  </div>
+              <div class="row mb-3">
+                <span style="color:#ffa31a;">&nbsp; Engine Details</span><hr style="height:2px; color:#7380c4;">
+</div>
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Modal year</label>
+    <div class="col-sm-8">
+      <select class="form-select" name="modelyear" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+    </div>
+  </div>
+
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Chassis No</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="chassis" required>
+    </div>
+  </div>
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Fuel Type</label>
+    <div class="col-sm-8">
+      <select class="form-select" name="fuel" aria-label="Default select example">
+  <option selected value="open this select menu">Open this select menu</option>
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+</select>
+    </div>
+  </div>
+
+                 <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">Old Vehicle No</label>
+    <div class="col-sm-8">
+        <div class="input-group mb-3">
+      <input type="text" class="form-control" name="oldvehichle" required>
+    </div>
+    </div>
+  </div>
+<div class="row mb-3">
+  <center>
+  <div class="col-sm-3">
+  <input type="submit" value="Submit" class="btn btn-success">
+</div></center>
+  </div>
+            </form>
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="col-sm-3" ></div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
